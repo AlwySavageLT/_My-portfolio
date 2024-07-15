@@ -1,0 +1,90 @@
+.about-me-page {
+    background-image: linear-gradient(to bottom right, #09203F , #537895);
+    color: #fff;
+    font-family: 'Consolas', monospace;
+    padding-top: 0px;
+    padding-bottom: 15px;
+  }
+
+
+  
+  .content-wrapper {
+    display: flex;
+    height: 100%;
+  }
+  
+  .sidebar {
+    width: 200px;
+  padding: 20px;
+  background-color: #374151;
+  border-right: 1px solid #07f0e4;
+  }
+  
+  .sidebar h3 {
+    color: #c85a11;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+   
+  }
+  
+  .bio-section pre {
+    background-color: #1e2d3d;
+    padding: 10px;
+    border-radius: 20px;
+    white-space: pre-wrap;
+  }
+  
+  .code-showcase {
+    flex-direction: row;
+    width: 450px;
+    padding: 25px;
+    border-left: 1px solid  #07f0e4;
+  }
+  
+  .code-snippet1 {
+    width: 400px;
+    margin-bottom: 20px;
+    background-color: #082a44;
+    border-radius: 5px;
+  
+  }
+  
+  .snippet-header {
+    width:400px;
+    background-color: #823f0c;
+    padding: 4px;
+    align-items: center;
+    font-size: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .snippet-header img {
+    width: 10px;
+    height: 10px;
+    border-radius: 0%;
+    margin-right: 0px;
+  }
+  
+  .code-snippet1 pre {
+    padding: 10px;
+    margin: 0px;
+  }
+  
+  codea1 {
+    font-size: 14px;
+  }
+  code1 {
+    font-size: 12px;
+    justify-content: center;
+    
+  }
+  

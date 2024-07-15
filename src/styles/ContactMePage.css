@@ -1,0 +1,88 @@
+.contact-page {
+  display: flex;
+  background-image: linear-gradient(to bottom right, #09203F , #537895);
+  font-family: 'Soure code pro', monospace;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color: #374151;
+  border-right: 1px solid #07f0e4;
+}
+
+.contacts, .find-me-also-in {
+  margin-bottom: 30px;
+}
+
+.contacts h3, .find-me-also-in h3 {
+  color: #02f647;
+  font-size: 16px;
+}
+
+.find-me-also-in ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-form {
+  flex: 1;
+  padding: 50px;
+  
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #8f9ba8;
+}
+
+input, textarea {
+  width: 100%;
+  background-color: #1e2d3d;
+  border: 1px solid #374151;
+  color: #fff;
+  padding: 10px;
+}
+
+.submit-btn {
+  background-color: #1e2d3d;
+  color: #fff;
+  border: 1px solid #374151;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.code-snippet {
+  width: 40%;
+  padding: 20px;
+  border-left:  1px solid #07f0e4;
+}
+
+
+code {
+  color: #6ce08f;
+}
+
+.hcaptcha-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.refresh-captcha-btn {
+  background-color: #1e2d3d;
+  color: #fff;
+  border: 1px solid #374151;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.status-message {
+  margin-top: 10px;
+  color: #01f46a;
+}

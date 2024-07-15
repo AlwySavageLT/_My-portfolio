@@ -1,0 +1,51 @@
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  background-color: #144386;
+  color: #ccd6f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;/* Disable scrolling */
+}
+
+main {
+  flex-grow: 1;
+  overflow: auto; /* Allow scrolling within the main content */
+}
+
+header, footer {
+  flex-shrink: 0;
+}
+
+/* Header styling */
+
+
+.social-media {
+  display: flex;
+  align-items: center;
+}
+
+.social-media span {
+  margin-right: 0.5rem;
+}
+
+.social-media a {
+  margin-right: 0.5rem;
+  color: white
+}
+
+.username {
+  display: flex;
+  align-items: center;
+}
+
+.username span {
+  margin-right: 0.5rem;
+}
+
+.username a {
+  color: white;
+  text-decoration: none;
+}

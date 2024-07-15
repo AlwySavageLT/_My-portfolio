@@ -1,0 +1,43 @@
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1a202c;
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+  position: relative;
+  bottom: 0;
+  z-index: 1000;
+  border-top: 1px solid #07f0e4
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+}
+
+.social-media span {
+  margin-right: 0.5rem;
+}
+
+.social-media a {
+  margin-right: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+}
+
+.username span {
+  margin-right: 0.5rem;
+}
+
+.username a {
+  color: white;
+  text-decoration: none;
+}
