@@ -7,16 +7,16 @@ const Footer = () => {
     <footer className="footer">
       <div className="social-media">
         <span>Find me in:</span>
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/kaushik-acharya-8611a5228/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
         </a>
-        <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/KaushikAc1" target="_blank" rel="noopener noreferrer">
           <FaTwitter />
         </a>
       </div>
       <div className="username">
         <span>@AlwySavageLT</span>
-        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/AlwySavageLT" target="_blank" rel="noopener noreferrer">
           <FaGithub />
         </a>
       </div>

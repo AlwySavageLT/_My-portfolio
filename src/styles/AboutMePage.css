@@ -1,12 +1,8 @@
 .about-me-page {
     background-image: linear-gradient(to bottom right, #09203F , #537895);
     color: #fff;
-    font-family: 'Consolas', monospace;
-    padding-top: 0px;
-    padding-bottom: 15px;
+    font-family: 'Source code pro', monospace;
   }
-
-
   
   .content-wrapper {
     display: flex;
@@ -14,19 +10,19 @@
   }
   
   .sidebar {
-    width: 200px;
-  padding: 20px;
-  background-color: #374151;
+    width: 210px;
+  padding: 10px;
+  background-color: #04142d;
   border-right: 1px solid #07f0e4;
   }
   
   .sidebar h3 {
-    color: #c85a11;
+    color: #f64207;
   }
   
   .sidebar ul {
     list-style-type: none;
-    padding-left: 20px;
+    padding-left: 5px;
   }
   
   .main-content {
@@ -36,8 +32,8 @@
   }
   
   .bio-section pre {
-    background-color: #1e2d3d;
-    padding: 10px;
+    background-color: #082a44;
+    padding: 20px;
     border-radius: 20px;
     white-space: pre-wrap;
   }
@@ -54,15 +50,16 @@
     margin-bottom: 20px;
     background-color: #082a44;
     border-radius: 5px;
+    
   
   }
   
   .snippet-header {
     width:400px;
-    background-color: #823f0c;
-    padding: 4px;
+    background-color: #0c124a;
+    padding: 1px;
     align-items: center;
-    font-size: 15px;
+    font-size: 14px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -76,7 +73,7 @@
   
   .code-snippet1 pre {
     padding: 10px;
-    margin: 0px;
+    margin: 10px;
   }
   
   codea1 {

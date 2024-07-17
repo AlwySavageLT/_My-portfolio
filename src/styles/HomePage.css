@@ -1,21 +1,22 @@
-
 .main-content {
   background-image: linear-gradient(to bottom right, #09203F , #537895);
   display: flex;
-  align-items: flex-start; /* Align items at the top */
-  justify-content: center; /* Center items horizontally */
-  padding: 1rem;
-  text-align: left; /* Adjust text alignment to left */
-  overflow: hidden; /* Ensure content stays within the viewport */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: calc(100vh - 60px); /* Adjust based on your header height */
+  box-sizing: border-box;
 }
 
 /* Text content styling */
 .text-content {
-  margin-right: 8rem; /* Space between text and SnakeGame */
+  margin-top: 8rem;
+  margin-left: 8rem;
   max-width: 600px;
-  margin-top: 7rem;
-  margin-bottom: 8rem;
-   /* Optional: Set max width for text content */
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .main-content h1 {
@@ -24,7 +25,7 @@
 }
 
 .main-content h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #64ffda;
 }
@@ -35,7 +36,7 @@
 }
 
 .main-content p {
-  margin-top: 2rem;
+  margin-top: 1rem;
   color: #8892b0;
 }
 
@@ -50,12 +51,50 @@ button {
 }
 
 button:hover {
-  background-color: #52c7b8;
+  background-color: #dbb910;
 }
-snake{
-  margin-top: 75px;
-  border: 1px solid  #07f0e4; 
-  background-color: #088290;
-  padding: 20px;
-  border-radius: 10px;
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .text-content {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .text-content {
+    margin-right: 4rem;
+  }
+
+  .main-content h2 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .main-content h2 {
+    font-size: 2rem;
+  }
+
+  .main-content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* SnakeGame container */
+.snake-game-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }

@@ -56,19 +56,19 @@ const ContactMe = () => {
 
   return (
     <div className="contact-page">
-      <div className="sidebar">
+      <div className="sidebar1">
         <div className="contacts">
           <h3>contacts</h3>
-          <p>user@gmail.com</p>
-          <p>+3598246359</p>
+          <p>Kaushikva44@gmail.com</p>
+          <p>+91 6360586390</p>
         </div>
         <div className="find-me-also-in">
           <h3>find-me-also-in</h3>
           <ul>
-            <li>YouTube channel</li>
-            <li>GuruShots profile</li>
-            <li>Instagram account</li>
-            <li>Twitch profile</li>
+            <li>YouTube</li>
+            <li>Spotify</li>
+            <li>Instagram</li>
+            <li>Twitch.tv</li>
           </ul>
         </div>
       </div>

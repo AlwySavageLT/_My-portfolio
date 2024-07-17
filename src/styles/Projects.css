@@ -1,0 +1,119 @@
+.projects-container {
+  display: flex;
+  color: #607B96;
+  background-image: linear-gradient(to bottom right, #09203F , #537895);
+  font-family: 'Soure code pro', monospace;
+}
+
+.sidebar2 {
+  background-color: #011221;
+  width: 200px;
+  border-right: 1px solid rgba(5, 213, 240, 0.867);
+  padding: 50px;
+}
+
+.sidebar2 h2 {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.tech-filter {
+  border-top: 1px solid #1E2D3D;
+  padding-top: 20px;
+}
+
+.tech-filter p {
+  background-color: #072f56;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+
+.close-icon {
+  color: #607B96;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  margin-right: 85px;
+}
+
+.tech-item input[type="checkbox"] {
+  margin-right: 5px;
+  flex: 0 0 auto;
+}
+
+.tech-icon {
+  margin-right: 2px;
+  flex: 0 0 20px;
+  text-align: center;
+}
+
+.tech-item span:last-child {
+  flex: 1; 
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.project-card {
+  background-color: #011221;
+  border: 1px solid #1E2D3D;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  color: #5565E8;
+  padding: 10px;
+}
+
+.project-card p {
+  padding: 0 10px 10px;
+}
+
+.view-project {
+  background-color: #1C2B3A;
+  color: #FFFFFF;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add styles for the footer */
+.footer {
+  border-top: 1px solid #1E2D3D;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-links a {
+  color: #607B96;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.github-link {
+  color: #607B96;
+  text-decoration: none;
+}

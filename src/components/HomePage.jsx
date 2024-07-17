@@ -22,10 +22,9 @@ const HomePage = () => {
             const githubLink = <a href='https://github.com/AlwySavageLT' target='_blank' rel='noopener noreferrer'>https://github.com/AlwySavageLT</a>
           </p>
         </motion.div>
-        <snake>
-        <SnakeGame />
-        </snake>
-        
+        <div className="snake-game-container">
+          <SnakeGame />
+        </div>
       </main>
     </div>
   );

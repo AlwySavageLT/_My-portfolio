@@ -7,7 +7,7 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  overflow: auto;/* Disable scrolling */
+  overflow-y: scroll;
 }
 
 main {
@@ -18,8 +18,6 @@ main {
 header, footer {
   flex-shrink: 0;
 }
-
-/* Header styling */
 
 
 .social-media {
