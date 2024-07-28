@@ -6,12 +6,12 @@
   padding: 1rem;
   height: 50px;
   background-color: #000000;
-  color: white;
+  color: #607B96;
   font-family: 'Source Code Pro', monospace;
   position: relative;
   bottom: 0;
   z-index: 1000;
-  border-top: 1px solid #07f0e4
+  border-top: 1px solid #85d4e2;
 }
 
 .social-media {

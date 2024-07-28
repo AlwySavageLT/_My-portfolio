@@ -11,8 +11,9 @@
 
 /* Text content styling */
 .text-content {
-  margin-top: 8rem;
-  margin-left: 8rem;
+  margin-top: 10%;
+  margin-left: 10%; /* Use percentage instead of fixed units */
+  max-width: 90%; /* Adjust max-width to be responsive */
   max-width: 600px;
   width: 100%;
   margin-bottom: 2rem;

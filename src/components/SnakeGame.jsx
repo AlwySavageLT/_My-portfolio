@@ -14,6 +14,7 @@ const SnakeGame = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [foodLeft, setFoodLeft] = useState(10);
   const [message, setMessage] = useState('');
+  const [boardSize, setBoardSize] = useState({ width: 200, height: 400 });
 
   const moveSnake = useCallback(() => {
     let newSnake = [...snake];
@@ -39,8 +40,8 @@ const SnakeGame = () => {
     newSnake.unshift(head);
     if (head.x === food.x && head.y === food.y) {
       setFood({
-        x: Math.floor(Math.random() * 20) * 10,
-        y: Math.floor(Math.random() * 20) * 10,
+        x: Math.floor(Math.random() * (boardSize.width / 10)) * 10,
+        y: Math.floor(Math.random() * (boardSize.height / 10)) * 10,
       });
       setFoodLeft(foodLeft - 1);
     } else {
@@ -49,9 +50,9 @@ const SnakeGame = () => {
 
     if (
       head.x < 0 ||
-      head.x >= 200 ||
+      head.x >= boardSize.width ||
       head.y < 0 ||
-      head.y >= 400 ||
+      head.y >= boardSize.height ||
       newSnake.slice(1).some(segment => segment.x === head.x && segment.y === head.y)
     ) {
       setMessage('Game Over!');
@@ -62,7 +63,7 @@ const SnakeGame = () => {
     }
 
     setSnake(newSnake);
-  }, [snake, direction, food, foodLeft]);
+  }, [snake, direction, food, foodLeft, boardSize]);
 
   const handleKeyDown = (e) => {
     switch (e.keyCode) {
@@ -83,6 +84,12 @@ const SnakeGame = () => {
     }
   };
 
+  const handleArrowClick = (newDirection) => {
+    if (isPlaying) {
+      setDirection(newDirection);
+    }
+  };
+
   useEffect(() => {
     if (isPlaying) {
       const interval = setInterval(moveSnake, 200);
@@ -93,6 +100,23 @@ const SnakeGame = () => {
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const updateBoardSize = () => {
+      const gameBoard = document.querySelector('.game-board');
+      if (gameBoard) {
+        setBoardSize({
+          width: gameBoard.offsetWidth,
+          height: gameBoard.offsetHeight,
+        });
+      }
+    };
+
+    updateBoardSize();
+    window.addEventListener('resize', updateBoardSize);
+
+    return () => window.removeEventListener('resize', updateBoardSize);
   }, []);
 
   const startGame = () => {
@@ -110,17 +134,34 @@ const SnakeGame = () => {
     setIsPlaying(true);
   };
 
+  const getSegmentStyle = (x, y) => ({
+    left: `${(x / boardSize.width) * 100}%`,
+    top: `${(y / boardSize.height) * 100}%`,
+  });
+
   return (
     <div className="game-container">
       <div className="game-board">
         {snake.map((segment, index) => (
-          <div key={index} className="snake-segment" style={{ left: segment.x, top: segment.y }} />
+          <div key={index} className="snake-segment" style={getSegmentStyle(segment.x, segment.y)} />
         ))}
-        <div className="food" style={{ left: food.x, top: food.y }} />
+        <div className="food" style={getSegmentStyle(food.x, food.y)} />
       </div>
       <div className="instructions">
         <p>{'// use keyboard'}</p>
         <p>{'// arrows to play'}</p>
+        <div className="arrow-keys">
+          <div className="arrow-row">
+            <div className="arrow-spacer"></div>
+            <button className="arrow-key up" onClick={() => handleArrowClick('UP')}>↑</button>
+            <div className="arrow-spacer"></div>
+          </div>
+          <div className="arrow-row">
+            <button className="arrow-key left" onClick={() => handleArrowClick('LEFT')}>←</button>
+            <button className="arrow-key down" onClick={() => handleArrowClick('DOWN')}>↓</button>
+            <button className="arrow-key right" onClick={() => handleArrowClick('RIGHT')}>→</button>
+          </div>
+        </div>
         <div className="food-left">
           {[...Array(foodLeft)].map((_, index) => (
             <div key={index} className="food-dot" />

@@ -1,6 +1,6 @@
 .header {
   background-color: #000000;
-  border-bottom: 1px solid #2298bc;
+  border-bottom: 1px solid #85d4e2;
   font-family: 'Source code pro', monospace;
   position: relative;
   overflow: hidden;
@@ -65,7 +65,7 @@
 }
 
 .nav-links li.active {
-  border-bottom: 3px solid #fe7206;
+  border-bottom: 3px solid #fe5906;
 }
 
 .nav-links li.active a {

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="social-media">
-        <span>Find me in:</span>
+        <span>Find-me-in:</span>
         <a href="https://www.linkedin.com/in/kaushik-acharya-8611a5228/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
         </a>
