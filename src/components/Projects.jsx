@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Projects.css';
+import image1 from '../assets/Test1.gif'
+import image2 from '../assets/Test2.gif'
+import image3 from '../assets/Test3.webp'
+import image4 from '../assets/Test4.webp'
 
 const Projects = () => {
   const [selectedTechnologies, setSelectedTechnologies] = useState(['React', 'Vue']);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const technologies = [
     { name: 'React', icon: '⚛️' },
@@ -19,7 +24,7 @@ const Projects = () => {
       id: 1,
       title: 'Project 1 // _ui-animations',
       description: 'Duis aute irure dolor in velit esse cillum dolore.',
-      image: 'path_to_ui_animations_image.jpg',
+      image: image1,
       tech: 'React',
       githubUrl: 'https://github.com/yourusername/ui-animations'
     },
@@ -27,7 +32,7 @@ const Projects = () => {
       id: 2,
       title: 'Project 2 // My_portfolio',
       description: 'React portfolio application built using vite.js',
-      image: 'path_to_tetris_game_image.jpg',
+      image: image2,
       tech: 'React',
       githubUrl: 'https://github.com/yourusername/my-portfolio'
     },
@@ -35,7 +40,7 @@ const Projects = () => {
       id: 3,
       title: 'Project 3 // _ethereum',
       description: 'Duis aute irure dolor in velit esse cillum dolore.',
-      image: 'path_to_ethereum_image.jpg',
+      image: image3,
       tech: 'Flutter',
       githubUrl: 'https://github.com/yourusername/ethereum-project'
     },
@@ -43,8 +48,16 @@ const Projects = () => {
       id: 4,
       title: 'Project 4 // _ethereum',
       description: 'Duis aute irure dolor in velit esse cillum dolore.',
-      image: 'path_to_ethereum_image.jpg',
+      image: image4,
       tech: 'Flutter',
+      githubUrl: 'https://github.com/yourusername/ethereum-project-2'
+    },
+    {
+      id: 5,
+      title: 'Project 5 // _ethereum',
+      description: 'Duis aute irure dolor in velit esse cillum dolore.',
+      image: image4,
+      tech: 'Angular',
       githubUrl: 'https://github.com/yourusername/ethereum-project-2'
     },
   ];
@@ -53,44 +66,55 @@ const Projects = () => {
     setSelectedTechnologies(prev =>
       prev.includes(tech) ? prev.filter(t => t !== tech) : [...prev, tech]
     );
+    setIsAnimating(true);
   };
 
   const navigateToGithub = (url) => {
     window.open(url, '_blank');
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => setIsAnimating(false), 500);
+    return () => clearTimeout(timer);
+  }, [selectedTechnologies]);
+
   return (
-    <div className="projects-container">
-      <div className="sidebar2">
-        <h2>projects</h2>
-        
-          {technologies.map(tech => (
-            <label key={tech.name} className="tech-item">
-              <input
-                type="checkbox"
-                checked={selectedTechnologies.includes(tech.name)}
-                onChange={() => toggleTechnology(tech.name)}
-              />
-              <span className="tech-icon">{tech.icon}</span>
-              <span>{tech.name}</span>
-            </label>
-          ))}
-       
-      </div>
-      <div className="projects-grid">
-        {projects.filter(project => selectedTechnologies.includes(project.tech)).map(project => (
-          <div key={project.id} className="project-card">
-            <img src={project.image} alt={project.title} />
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <button 
-              className="view-project" 
-              onClick={() => navigateToGithub(project.githubUrl)}
-            >
-              view-project
-            </button>
+    <div className="projects-page">
+      <div className="content-wrapper">
+        <aside className="sidebar">
+          <div className="technologies-filter">
+            <h3>&lt;Technologies/&gt;</h3>
+            <ul>
+              {technologies.map(tech => (
+                <li 
+                  key={tech.name}
+                  className={selectedTechnologies.includes(tech.name) ? 'active' : ''}
+                  onClick={() => toggleTechnology(tech.name)}
+                >
+                  <span className="tech-icon">{tech.icon}</span>
+                  {tech.name}
+                </li>
+              ))}
+            </ul>
           </div>
-        ))}
+        </aside>
+        <main className="main-content">
+          <div className={`projects-grid ${isAnimating ? 'animating' : ''}`}>
+            {projects.filter(project => selectedTechnologies.includes(project.tech)).map(project => (
+              <div key={project.id} className="project-card">
+                <img src={project.image} alt={project.title} />
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <button 
+                  className="view-project" 
+                  onClick={() => navigateToGithub(project.githubUrl)}
+                >
+                  view-project
+                </button>
+              </div>
+            ))}
+          </div>
+        </main>
       </div>
     </div>
   );

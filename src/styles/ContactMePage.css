@@ -1,34 +1,76 @@
+/* ContactMePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap');
+
 .contact-page {
-  display: flex;
   background-image: linear-gradient(to bottom right, #09203F , #537895);
-  font-family: 'Soure code pro', monospace;
+  color: #7fdbca;
+  font-family: 'Source Code Pro', monospace;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.sidebar1 {
+.content-wrapper {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  background: rgba(31, 42, 62, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(151, 212, 212, 0.578);
+  overflow: hidden;
+}
+
+.sidebar {
   width: 250px;
   padding: 20px;
-  background-color: #09203F;
-  border-right: 1px solid #07f0e4;
+  background-color: rgba(10, 17, 30, 0.8);
+  border-right: 1px solid #99eee8;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
-.contacts, .find-me-also-in {
-  margin-bottom: 30px;
+.sidebar h3 {
+  color: #61dafb;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
 }
 
-.contacts h3, .find-me-also-in h3 {
-  color: #02f647;
-  font-size: 16px;
-}
-
-.find-me-also-in ul {
+.sidebar ul {
   list-style-type: none;
-  padding: 0;
+  padding-left: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+
+.contact-form-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-right: 50px;
 }
 
 .contact-form {
   flex: 1;
-  padding: 50px;
-  
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group {
@@ -47,42 +89,127 @@ input, textarea {
   border: 1px solid #374151;
   color: #fff;
   padding: 10px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
 }
 
 .submit-btn {
-  background-color: #1e2d3d;
-  color: #fff;
-  border: 1px solid #374151;
-  padding: 10px 20px;
+  background-color: #1a2c42;
+  color: #61dafb;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
   cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-size: 1em;
+  align-self: flex-start;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #61dafb;
+  color: #0a0e17;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(97, 218, 251, 0.4);
+}
+
+.code-snippet-wrapper {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .code-snippet {
-  width: 40%;
+  background-color: rgba(2, 17, 37, 0.999);
+  border-radius: 15px;
   padding: 20px;
-  border-left:  1px solid #07f0e4;
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+  overflow: hidden;
 }
-
 
 code {
-  color: #6ce08f;
-}
-
-.hcaptcha-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.refresh-captcha-btn {
-  background-color: #1e2d3d;
-  color: #fff;
-  border: 1px solid #374151;
-  padding: 10px 20px;
-  cursor: pointer;
+  color: #31cad5;
 }
 
 .status-message {
   margin-top: 10px;
-  color: #01f46a;
+  color: #01f48f;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.contact-form.animating {
+  animation: fadeOutDown 0.3s ease-out forwards, fadeInUp 0.3s ease-in 0.3s forwards;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d192a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bcebf8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7fdbca;
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .code-snippet-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #99eee8;
+  }
 }
