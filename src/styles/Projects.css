@@ -32,7 +32,7 @@
 
 .sidebar h3 {
   color: #61dafb;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Anonymous Pro", monospace;
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
 }
@@ -70,6 +70,8 @@
 
 .tech-icon {
   margin-right: 10px;
+  width: 20px;
+  height: 20px;
 }
 
 .main-content {
@@ -138,6 +140,7 @@
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(97, 218, 251, 0.4);
 }
+
 
 @keyframes fadeInUp {
   from {

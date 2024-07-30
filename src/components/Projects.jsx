@@ -4,19 +4,26 @@ import image1 from '../assets/Test1.gif'
 import image2 from '../assets/Test2.gif'
 import image3 from '../assets/Test3.webp'
 import image4 from '../assets/Test4.webp'
+import ReactI from '../assets/Reacticon.svg'
+import HTMLI from '../assets/html_icon.svg'
+import CSSI from '../assets/css_icon.svg'
+import NextI from '../assets/nextjs_icon.svg'
+import ViteI from '../assets/Vite.js.svg'
+import PythonI from '../assets/python_icon.svg'
+import FlutterI from '../assets/flutter_icon.svg'
 
 const Projects = () => {
   const [selectedTechnologies, setSelectedTechnologies] = useState(['React', 'Vue']);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const technologies = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'HTML', icon: '🌐' },
-    { name: 'CSS', icon: '🎨' },
-    { name: 'Vue', icon: '🖖' },
-    { name: 'Angular', icon: '🅰️' },
-    { name: 'Gatsby', icon: '🚀' },
-    { name: 'Flutter', icon: '📱' },
+    { name: 'React', icon: ReactI },
+    { name: 'HTML', icon: HTMLI },
+    { name: 'CSS', icon: CSSI },
+    { name: 'Next.js', icon: NextI },
+    { name: 'Python', icon: PythonI },
+    { name: 'Vite.js', icon: ViteI },
+    { name: 'Flutter', icon: FlutterI },
   ];
 
   const projects = [
@@ -57,7 +64,7 @@ const Projects = () => {
       title: 'Project 5 // _ethereum',
       description: 'Duis aute irure dolor in velit esse cillum dolore.',
       image: image4,
-      tech: 'Angular',
+      tech: 'Python',
       githubUrl: 'https://github.com/yourusername/ethereum-project-2'
     },
   ];
@@ -91,7 +98,7 @@ const Projects = () => {
                   className={selectedTechnologies.includes(tech.name) ? 'active' : ''}
                   onClick={() => toggleTechnology(tech.name)}
                 >
-                  <span className="tech-icon">{tech.icon}</span>
+                  <img src={tech.icon} alt={tech.name} className="tech-icon" />
                   {tech.name}
                 </li>
               ))}

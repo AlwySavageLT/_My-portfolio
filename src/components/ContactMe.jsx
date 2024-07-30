@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import '../styles/ContactMePage.css';
+import YouTubeIcon from '../assets/youtube.svg';
+import SpotifyIcon from '../assets/spotify.svg';
+import InstagramIcon from '../assets/instagram.svg';
+import RedditIcon from '../assets/reddit.svg';
 
 const ContactMe = () => {
   const [name, setName] = useState('');
@@ -73,14 +77,30 @@ const ContactMe = () => {
             </ul>
           </div>
           <div className="find-me-also-in">
-            <h3>&lt;FindMeAlsoIn/&gt;</h3>
-            <ul>
-              <li>🎥 YouTube</li>
-              <li>🎵 Spotify</li>
-              <li>📸 Instagram</li>
-              <li>🎮 Twitch.tv</li>
-            </ul>
-          </div>
+  <h3>&lt;FindMeAlsoIn/&gt;</h3>
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/your-channel" target="_blank" rel="noopener noreferrer">
+        <img src={YouTubeIcon} alt="YouTube" className="social-icon" /> YouTube
+      </a>
+    </li>
+    <li>
+      <a href="https://open.spotify.com/user/your-profile" target="_blank" rel="noopener noreferrer">
+        <img src={SpotifyIcon} alt="Spotify" className="social-icon" /> Spotify
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/your-profile" target="_blank" rel="noopener noreferrer">
+        <img src={InstagramIcon} alt="Instagram" className="social-icon" /> Instagram
+      </a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/user/your-username" target="_blank" rel="noopener noreferrer">
+        <img src={RedditIcon} alt="Reddit" className="social-icon" /> Reddit
+      </a>
+    </li>
+  </ul>
+</div>
         </aside>
         <main className="main-content">
           <div className="contact-form-wrapper">

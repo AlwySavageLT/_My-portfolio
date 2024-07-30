@@ -1,5 +1,6 @@
 /* ContactMePage.css */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .contact-page {
   background-image: linear-gradient(to bottom right, #09203F , #537895);
@@ -34,7 +35,7 @@
 
 .sidebar h3 {
   color: #61dafb;
-  font-family: 'Orbitron', sans-serif;
+  font-family:"Anonymous Pro", monospace;
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
 }
@@ -134,6 +135,24 @@ textarea {
   padding: 20px;
   box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
   overflow: hidden;
+}
+
+.find-me-also-in a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.find-me-also-in a:hover {
+  color: #61dafb;  /* or any color you prefer for hover state */
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 code {
